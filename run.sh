@@ -25,7 +25,7 @@ done
 # Take environment variables and pass them to `postmap`
 # e.g. POSTMAP_LMDB_VIRTUAL="@example.com john@gmail.com"-> `echo "@example.com john@gmail.com" | postmap -i lmdb:/etc/postfix/virtual`
 POSTMAP_PREFIX="POSTMAP_"
-POSTMAP_REGEX="^$POSTMAP_PREFIX}\([A-Za-z]\+\)_\(\([A-Za-z_]\+\)=\(.*\)$"
+POSTMAP_REGEX="^${POSTMAP_PREFIX}\([A-Za-z]\+\)_\([A-Za-z_]\+\)=\(.*\)$"
 env | grep "^${POSTMAP_PREFIX}" | while read -r ENV_VAR;
 do
     FILE_TYPE=$(echo "$ENV_VAR" | sed -e 's/'"${POSTMAP_REGEX}"'/\1/' | tr '[:upper:]' '[:lower:]')
