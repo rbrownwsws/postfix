@@ -40,7 +40,7 @@ _N.B. Files will be created in `/etc/postfix/<file_name>`_
 > 
 > and would run:
 >
-> `postmap lmdb:/etc/postfix/virtual"`
+> `postmap "lmdb:/etc/postfix/virtual"`
 >
 > You should pass the container this environment variable instead:
 >
